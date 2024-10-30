@@ -1,8 +1,13 @@
+import Login from "./components/Auth/Login";
 
 const App = () => {
   return (
-    <div className="bg-red-400">App</div>
-  )
-}
+    <>
+      <div>
+        <Login />
+      </div>
+    </>
+  );
+};
 
-export default App
+export default App;
