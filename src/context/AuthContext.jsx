@@ -1,8 +1,5 @@
+const AuthContext = ({ children }) => {
+  return <div>{children}</div>;
+};
 
-const AuthContext = () => {
-  return (
-    <div>AuthContext</div>
-  )
-}
-
-export default AuthContext
+export default AuthContext;
