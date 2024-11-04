@@ -1,7 +1,8 @@
 const employees = [
   {
     id: 1,
-    email: "employee1@example.com",
+    firstName: "Arjun",
+    email: "e@e.com",
     password: "123",
     tasks: [
       {
@@ -35,9 +36,16 @@ const employees = [
         failed: false,
       },
     ],
+    taskNumbers: {
+      active: 2,
+      newTask: 2,
+      completed: 0,
+      failed: 0,
+    },
   },
   {
     id: 2,
+    firstName: "Rohan",
     email: "employee2@example.com",
     password: "123",
     tasks: [
@@ -62,9 +70,16 @@ const employees = [
         failed: false,
       },
     ],
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
   },
   {
     id: 3,
+    firstName: "Lakshay",
     email: "employee3@example.com",
     password: "123",
     tasks: [
@@ -90,9 +105,16 @@ const employees = [
         failed: false,
       },
     ],
+    taskNumbers: {
+      active: 1,
+      newTask: 0,
+      completed: 0,
+      failed: 1,
+    },
   },
   {
     id: 4,
+    firstName: "Meera",
     email: "employee4@example.com",
     password: "123",
     tasks: [
@@ -117,40 +139,54 @@ const employees = [
         failed: false,
       },
     ],
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
   },
   {
     id: 5,
+    firstName: "Ananya",
     email: "employee5@example.com",
     password: "123",
     tasks: [
       {
-        title: "Marketing strategy meeting",
-        description: "Attend the strategy meeting for new product launch.",
-        date: "2024-11-06",
+        title: "Customer service analysis",
+        description: "Analyze recent customer service trends.",
+        date: "2024-11-04",
+        category: "Analysis",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+      {
+        title: "Organize marketing campaign",
+        description: "Plan and coordinate the new product marketing campaign.",
+        date: "2024-11-12",
         category: "Marketing",
         active: true,
         newTask: true,
         completed: false,
         failed: false,
       },
-      {
-        title: "Budget allocation planning",
-        description: "Plan budget allocation for Q1 of 2025.",
-        date: "2024-11-10",
-        category: "Budgeting",
-        active: true,
-        newTask: false,
-        completed: false,
-        failed: false,
-      },
     ],
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 0,
+      failed: 1,
+    },
   },
 ];
 
 const admin = [
   {
     id: 1,
-    email: "admin@example.com",
+    firstName: "Tarun",
+    email: "admin@me.com",
     password: "123",
   },
 ];
@@ -163,5 +199,5 @@ export const setLocalStorage = () => {
 export const getLocalStorage = () => {
   const employee = JSON.parse(localStorage.getItem("employees"));
   const admin = JSON.parse(localStorage.getItem("admin"));
-  console.log(employee, admin);
+  return { employee, admin };
 };
