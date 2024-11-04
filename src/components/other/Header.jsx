@@ -1,7 +1,9 @@
-const Header = ({ data }) => {
+const Header = (props) => {
+  console.log();
   const logoutUser = () => {
     localStorage.setItem("loggedInUser", "");
-    window.location.reload();
+    props.changeUser("");
+    // window.location.reload();
   };
   return (
     <div className="flex items-end justify-between">

@@ -3,26 +3,15 @@ import Login from "./components/Auth/Login";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import { AuthContext } from "./context/AuthProvider";
-// import { getLocalStorage, setLocalStorage } from "./utils/localStorage";
 
 const App = () => {
-  // useEffect(()=>{
-  //   // setLocalStorage()
-  //   getLocalStorage()
-  // })
+
 
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
   const authData = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   if (authData) {
-  //     const loggedInUser = localStorage.getItem("loggedInUser");
-  //     if (loggedInUser) {
-  //       setUser(loggedInUser.role);
-  //     }
-  //   }
-  // }, [authData]);
+ 
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedInUser");
@@ -60,9 +49,9 @@ const App = () => {
       <div>
         {!user ? <Login handleLogin={handleLogin} /> : ""}
         {user == "admin" ? (
-          <AdminDashboard />
+          <AdminDashboard  changeUser={setUser}/>
         ) : user == "employee" ? (
-          <EmployeeDashboard data={loggedInUserData} />
+          <EmployeeDashboard data={loggedInUserData} changeUser={setUser}/>
         ) : null}
       </div>
     </>
